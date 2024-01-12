@@ -23,14 +23,14 @@ ypred=model.predict(xtest)
 print("Accuracy:\n", accuracy_score(ytest, ypred))
 print("Classification Report:\n", classification_report(ytest, ypred))
 
-lr_prob=model.predict_proba(xtest)[:,1]
+prob=model.predict_proba(xtest)[:,1]
 
-lr_fpr,lr_tpr,_=roc_curve(ytest,lr_prob)
+fpr,tpr,_=roc_curve(ytest,prob)
 
-pyplot.plot(lr_fpr,lr_tpr,marker='.',label='Naive Bayes Classifier')
+plt.plot(lr_fpr,lr_tpr,marker='.',label='Naive Bayes Classifier')
 
-pyplot.xlabel('false positive rate')
-pyplot.ylabel('true positive rate')
+plt.xlabel('false positive rate')
+plt.ylabel('true positive rate')
 
-pyplot.legend()
-pyplot.show()
+plt.legend()
+plt.show()
