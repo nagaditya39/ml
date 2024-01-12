@@ -4,7 +4,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # Load dataset
-data = pd.read_csv('/Users/aaronmackenzie/Downloads/iris(For PCA Program).csv')
+data = pd.read_csv('iris.csv')
 
 # Separate features (X) and target variable (Y)
 X = data.drop("species", axis=1)
