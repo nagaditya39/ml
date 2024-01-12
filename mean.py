@@ -14,12 +14,19 @@ if len(x) % 2 == 0:
 else:
     median = x[len(x)//2]
 
+frequency_dict = {}
+for i in x:
+    if i in frequency_dict:
+        frequency_dict[i] += 1
+    else:
+        frequency_dict[i] = 1
+
 mx = 0
 mode = 0
-for i in x:
-    if x.count(i) >= mx:
-        mx = x.count(i)
-        mode = i
+for key, value in frequency_dict.items():
+    if value >= mx:
+        mx = value
+        mode = key
 
 var = sum((i - mean)**2 for i in x) / (len(x) - 1)
 
